@@ -7,8 +7,23 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    z-index: 2;
 }
+.hero-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
+
+}
+.hero-bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .hero-overlay {
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
@@ -16,6 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
 }
 
 .hero-content {
@@ -136,8 +152,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 20px;
     flex-wrap: wrap;
+
 }
 
 .about-image {
@@ -154,7 +171,24 @@
 .about-text {
     flex: 1 1 55%;
 }
-
+.about-images{
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 700px;
+}
+.about-image{
+    max-width: 300px;
+    height: 250px;
+    width: 100%;
+}
+.about-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.about-text{
+    max-width: 600px;
+}
 .about-text h2 {
     font-size: 32px;
     margin-bottom: 20px;
@@ -428,11 +462,34 @@
 .cookie-body h2 {
     color: #222;
     margin-top: 30px;
+    font-size: 20px;
+
+}
+.cookie-body p{
+    margin-top: 10px;
+    font-size: 16px;
 }
 
 .cookie-body ul {
     padding-left: 20px;
+    margin-top: 10px;
 }
+
+.cookie-body ul li{
+    font-size: 16px;
+    line-height: 22px;
+    list-style: disc;
+}
+@media (max-width: 1350px) {
+    .about-text{
+        max-width: 100%;
+    }
+    .about-images{
+        max-width: 100%;
+        justify-content: center;
+    }
+}
+
 
 
 @media (max-width: 768px) {
@@ -498,6 +555,9 @@
     }
     .terms-header h1 {
         font-size: 16px;
+    }
+    .about-image {
+        height: 150px;
     }
 }
 

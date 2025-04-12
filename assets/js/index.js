@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
             openMenu();
         }
     });
+    document.querySelectorAll('.menu-list li a').forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
 
     function openMenu() {
         menu.classList.add('active');
@@ -73,3 +76,22 @@ questions.forEach(question => {
     });
 });
 
+
+
+document.querySelectorAll('.menu-list li a ').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
