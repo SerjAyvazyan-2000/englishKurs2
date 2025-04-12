@@ -78,7 +78,7 @@ questions.forEach(question => {
 
 
 
-document.querySelectorAll('.menu-list li a ').forEach(link => {
+document.querySelectorAll('.home-link ').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
